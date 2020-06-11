@@ -28,7 +28,7 @@ The current version passes all test vectors provided
 correctly for every edge case!**
 
 The BIP and C reference implementations are still under development so the API of
-this implementation is also not yet stable and can change when the reference implementation changes. 
+this implementation is also not yet stable and can change when the reference implementation changes.
 
 ## How to install
 
@@ -50,7 +50,7 @@ NOTE: All parameters are either of type `BigInteger` or `Buffer` (or an array of
 ### Schnorr
 
 ```javascript
-const Buffer = require('safe-buffer').Buffer; 
+const Buffer = require('safe-buffer').Buffer;
 const BigInteger = require('bigi');
 const schnorr = require('bip-schnorr');
 const convert = schnorr.convert;
@@ -115,7 +115,7 @@ try {
 ### muSig non-interactive
 
 ```javascript
-const Buffer = require('safe-buffer').Buffer; 
+const Buffer = require('safe-buffer').Buffer;
 const BigInteger = require('bigi');
 const schnorr = require('bip-schnorr');
 
@@ -140,7 +140,7 @@ try {
 ### muSig
 
 ```javascript
-const Buffer = require('safe-buffer').Buffer; 
+const Buffer = require('safe-buffer').Buffer;
 const BigInteger = require('bigi');
 const randomBytes = require('random-bytes');
 const randomBuffer = (len) => Buffer.from(randomBytes.sync(len));
@@ -395,3 +395,17 @@ Aggregate Signatures MuSig non-interactive (batch size: 32) x 0.62 ops/sec ±2.6
 Aggregate Signatures MuSig non-interactive (batch size: 64) x 0.32 ops/sec ±0.71% (5 runs sampled) 3171948 us/op 20 sig/s
 Done in 422.45s.
 ```
+
+### Browser demo
+the client browser demo (`index.html`) has been created using browserify,
+here are the steps if you want to reproduce this example:
+
+1 - install browserify globaly
+```
+npm install -g browserify
+```
+2- Generate a `bundle.js` from your code (try the `demo1.js` or `demo2.js`):
+```
+browserify demo1.js -o bundle.js
+```
+open `index.html` from your browser and check the console.
